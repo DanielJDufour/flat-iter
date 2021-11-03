@@ -26,7 +26,7 @@ const iterator = flatIter(data, depth);
 ```
 
 # case study: calculating statistics
-The [calc-stats library](https://github.com/danieljdufour/calc-stats) calculates
+The [calc-stats](https://github.com/danieljdufour/calc-stats) library calculates
 statistics of an iterable of numbers.  It works on flat arrays or any iterable that
 returns numbers.  It expects each call of next to return a number,
 not an array of numbers (like a row).  By using flatIter we can calculate statistics
