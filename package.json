@@ -1,6 +1,6 @@
 {
   "name": "flat-iter",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Deeply Iterate over Arrays. Like calling array.flat()[Symbol.iterator](), but without the memory cost",
   "main": "index.js",
   "files": [
