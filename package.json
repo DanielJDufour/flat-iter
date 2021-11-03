@@ -1,0 +1,32 @@
+{
+  "name": "flat-iter",
+  "version": "0.0.0",
+  "description": "Deeply Iterate over Arrays. Like calling array.flat()[Symbol.iterator](), but without the memory cost",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielJDufour/flat-iter.git"
+  },
+  "keywords": [
+    "array",
+    "flat",
+    "function",
+    "item",
+    "iter",
+    "iterator",
+    "symbol"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/DanielJDufour/flat-iter/issues"
+  },
+  "homepage": "https://github.com/DanielJDufour/flat-iter#readme",
+  "dependencies": {
+    "iter-fun": "^0.1.1"
+  }
+}

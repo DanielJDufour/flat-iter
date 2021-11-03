@@ -23,11 +23,22 @@ const data = [
 ];
 
 const iterator = flatIter(data, depth);
-
-// get max of all the values
-// while barely increasing memory cost
-import fastMax from "fast-max";
-const result = fastMax(iterator);
 ```
 
+# case study: calculating statistics
+The [calc-stats library](https://github.com/danieljdufour/calc-stats) calculates
+statistics of an iterable of numbers.  It works on flat arrays or any iterable that
+returns numbers.  It expects each call of next to return a number,
+not an array of numbers (like a row).  By using flatIter we can calculate statistics
+for a table of numbers (2-D arrays).
 
+```js
+// calculate statistics for 2-D Data
+import calcStats from "calc-stats";
+
+// new memory-safe way
+const stats = calcStats(flatIter(data));
+
+// old way, risking memory blowing up
+const stats = calcStats(data.flat());
+```
