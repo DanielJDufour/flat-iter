@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/DanielJDufour/flat-iter#readme",
   "dependencies": {
-    "iter-fun": "^0.1.1"
+    "iter-fun": "^0.1.2"
   }
 }
