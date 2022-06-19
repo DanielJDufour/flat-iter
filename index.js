@@ -26,6 +26,18 @@ function flatIter(data, depth = 1) {
   return result;
 }
 
-if (typeof module === "object") module.exports = flatIter;
-if (typeof self === "object") self.flatIter = flatIter;
-if (typeof window === "object") window.flatIter = flatIter;
+if (typeof define === "function" && define.amd) {
+  define(function () {
+    return flatIter;
+  });
+}
+if (typeof module === "object") {
+  module.exports = flatIter;
+  module.exports.default = flatIter;
+}
+if (typeof self === "object") {
+  self.flatIter = flatIter;
+}
+if (typeof window === "object") {
+  window.flatIter = flatIter;
+}

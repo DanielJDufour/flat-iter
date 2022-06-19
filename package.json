@@ -7,8 +7,12 @@
     "index.js"
   ],
   "scripts": {
-    "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js",
-    "test": "node test.js"
+    "f": "npm run format",
+    "format": "npx prettier --arrow-parens=avoid --print-width=120 --trailing-comma=none --write *.js *.ts",
+    "t": "npm test",
+    "test": "npm run test:js && npm run test:ts",
+    "test:js": "node test.js",
+    "test:ts": "npx ts-node test.ts"
   },
   "repository": {
     "type": "git",
@@ -31,5 +35,8 @@
   "homepage": "https://github.com/DanielJDufour/flat-iter#readme",
   "dependencies": {
     "iter-fun": "^0.1.2"
+  },
+  "devDependencies": {
+    "flug": "^2.3.1"
   }
 }
