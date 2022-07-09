@@ -117,3 +117,16 @@ test("mix of numbers and strings with Infinity depth", ({ eq }) => {
   eq(results, ["1", "a", 2, "B", 3, "c", "4F", 5, "J"]);
   eq(iter.next(), { done: true });
 });
+
+test("mixed array", ({ eq }) => {
+  const data = [Uint8Array.from([2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])];
+  (data as any).width = 101;
+  (data as any).height = 101;
+  const results: any[] = [];
+  const iter = flatIter(data, Infinity);
+  let it;
+  while (((it = iter.next()), !it.done)) {
+    results.push(it.value);
+  }
+  eq(Array.from(new Set(results)), [2]);
+});

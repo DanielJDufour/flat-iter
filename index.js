@@ -1,5 +1,16 @@
 const { getOrCreateIterator, wrapNextFunction } = require("iter-fun");
 
+// includes TypedArrays
+function isArray(data) {
+  return (
+    typeof data === "object" &&
+    typeof data.length === "number" &&
+    typeof data.constructor === "function" &&
+    typeof data.constructor.name === "string" &&
+    data.constructor.name.includes("Array")
+  );
+}
+
 function flatIter(data, depth = 1) {
   let iter = getOrCreateIterator(data);
   let ancestry = [];
@@ -12,7 +23,7 @@ function flatIter(data, depth = 1) {
         iter = ancestry.pop();
         return next(); // re-run
       }
-    } else if (ancestry.length < depth && Array.isArray(value)) {
+    } else if (ancestry.length < depth && isArray(value)) {
       ancestry.push(iter);
       iter = getOrCreateIterator(value);
       return next(); // re-run
@@ -34,6 +45,7 @@ if (typeof define === "function" && define.amd) {
 if (typeof module === "object") {
   module.exports = flatIter;
   module.exports.default = flatIter;
+  module.exports.flatIter = flatIter;
 }
 if (typeof self === "object") {
   self.flatIter = flatIter;
