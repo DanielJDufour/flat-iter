@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "description": "Deeply Iterate over Arrays. Like calling array.flat()[Symbol.iterator](), but without the memory cost",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
+    "index.d.ts",
     "index.js"
   ],
   "scripts": {
@@ -21,6 +23,7 @@
   "keywords": [
     "array",
     "flat",
+    "flatIter",
     "function",
     "item",
     "iter",
